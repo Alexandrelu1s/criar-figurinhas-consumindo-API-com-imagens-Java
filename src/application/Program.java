@@ -43,7 +43,9 @@ public class Program {
     	diretorio.mkdir();
 		
 		
-		for (Map<String, String> filme : listaDeFilmes) {
+    	for (int i = 0; i < 3; i++) {
+    		
+    		var filme = listaDeFilmes.get(i);
 			
         	String urlImagem = filme.get("image");
         	String titulo = filme.get("title");
