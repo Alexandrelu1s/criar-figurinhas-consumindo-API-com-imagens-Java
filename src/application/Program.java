@@ -1,6 +1,7 @@
 package application;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.net.URI;
 import java.net.URL;
@@ -49,10 +50,23 @@ public class Program {
 			
         	String urlImagem = filme.get("image");
         	String titulo = filme.get("title");
+        	double classificacao = Double.parseDouble(filme.get("imDbRating"));
+        	
+        	String textoFigurinha;
+        	InputStream imagemSobreposicao;
+        	if(classificacao >= 8.0) {
+        		textoFigurinha = "MÍDIA";
+        		imagemSobreposicao = new FileInputStream(new File("sobreposicao/positivo.jpg"));
+        	}
+        	else {
+        		textoFigurinha = "CANSADO";
+        		imagemSobreposicao = new FileInputStream(new File("sobreposicao/negativo.jpg"));
+        	}
+        	
         	InputStream inputStream = new URL(urlImagem).openStream();
         	String nomeArquivo = "figurinhas/" + titulo + ".png";
 
-        	geradora.cria(inputStream, nomeArquivo);
+        	geradora.cria(inputStream, nomeArquivo, textoFigurinha, imagemSobreposicao);
 
             System.out.println(titulo);
 
