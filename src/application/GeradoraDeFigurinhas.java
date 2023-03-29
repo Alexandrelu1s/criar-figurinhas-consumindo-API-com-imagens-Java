@@ -38,14 +38,12 @@ public class GeradoraDeFigurinhas {
 
 		// configurar a fonte
 		
-		var fonte = new Font(Font.SANS_SERIF, Font.BOLD, 65);
+		var fonte = new Font("Impact", Font.BOLD, 65);
 		graphics.setColor(Color.CYAN);
 		graphics.setFont(fonte);
 		
 
 		// escrever uma frase na nova imagem
-		
-		
 		
 		String texto = "MUITO MÍDIA";
 		FontMetrics fontMetrics = graphics.getFontMetrics();
