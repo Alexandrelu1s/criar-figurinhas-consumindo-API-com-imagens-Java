@@ -12,15 +12,18 @@ public class Program {
 
 	public static void main(String[] args) throws Exception {
 
-		// fazer uma conexao HTTP e buscar os top 250 filmes
+		// fazer uma conexão HTTP e buscar as séries mais populares
 
-		// String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies.json";
+		// String url =
+		// "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies.json";
 
-		String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopTVs.json";
+		// String url =
+		// "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopTVs.json";
 
-		// String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/MostPopularMovies.json";
+		// String url =
+		// "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/MostPopularMovies.json";
 
-		// String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/MostPopularTVs.json";
+		String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/MostPopularTVs.json";
 
 		URI endereco = URI.create(url);
 		HttpClient client = HttpClient.newHttpClient();
@@ -35,8 +38,8 @@ public class Program {
 
 		// exibir e manipular os dados
 
-		for (int i = 0; i < 3; i++) {
-			Map<String, String> filme = listaDeFilmes.get(i);
+		for (Map<String, String> filme : listaDeFilmes) {
+
 			System.out.println(filme.get("title"));
 			System.out.println(filme.get("image"));
 			System.out.println(filme.get("imDbRating"));
